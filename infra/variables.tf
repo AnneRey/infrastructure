@@ -148,10 +148,126 @@ variable "app_load_balancer_rampup_name" {
   default = "arey-ALB-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
 }
 
-variable "security_groups_alb_rampup_name" {
+variable "security_group_alb_name" {
   type = string
   default = "arey-ALBSecurityGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
 }
+
+variable "security_group_alb_flag" {
+  type = string
+  default = "not empty"
+}
+
+variable "security_group_alb_type" {
+  type = string
+  default = "ingress"
+}
+
+variable "security_group_alb_from_port" {
+  type = string
+  default = "80"
+}
+
+variable "security_group_alb_to_port" {
+  type = string
+  default = "80"
+}
+
+variable "security_group_alb_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_alb_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_cluster_name" {
+  type = string
+  default = "arey-clusterSecurityGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+}
+
+variable "security_group_bastion_name" {
+  type = string
+  default = "arey-bastionSecurityGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+}
+
+variable "security_group_rds" {
+  type = string
+  default = "arey-rdsSecurityGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+}
+
+variable "security_group_kubernetes" {
+  type = string
+  default = "arey-kubernetesSecurityGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+}
+
+variable "security_group_rules_cluster_flag" {
+  type = string
+  default = "not empty"
+}
+
+variable "security_group_rules_cluster_ingress_3030_type" {
+  type = string
+  default = "ingress"
+}
+
+variable "security_group_rules_cluster_ingress_3030_from_port" {
+  type = string
+  default = "3030"
+}
+
+variable "security_group_rules_cluster_ingress_3030_to_port" {
+  type = string
+  default = "3030"
+}
+
+variable "security_group_rules_cluster_ingress_3030_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_rules_cluster_ingress_22_type" {
+  type = string
+  default = "ingress"
+}
+
+variable "security_group_rules_cluster_ingress_22_from_port" {
+  type = string
+  default = "22"
+}
+
+variable "security_group_rules_cluster_ingress_22_to_port" {
+  type = string
+  default = "22"
+}
+
+variable "security_group_rules_cluster_ingress_22_protocol" {
+  type = string
+  default = "tcp"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
