@@ -58,6 +58,12 @@ variable "subnet_rampup_az_2" {
   default = "us-west-2b"
 }
 
+variable "subnet_rampup_az_4" {
+  type = string
+  default = "us-west-2d"
+}
+
+
 variable "internet_gateway_rampup_name" {
   type = string
   default = "arey-internetgtw-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
@@ -448,7 +454,63 @@ variable "security_group_rules_kube_protocol" {
   default = "tcp"
 }
 
+variable "db_instance_mysql_rampup_storage" {
+  type = string
+  default = "20"
+}
 
+variable "db_instance_mysql_rampup_storage_type" {
+  type = string
+  default = "gp2"
+}
+
+variable "db_instance_mysql_rampup_engine" {
+  type = string
+  default = "mysql"
+}
+
+variable "db_instance_mysql_rampup_engine_version" {
+  type = string
+  default = "5.7"
+}
+
+variable "db_instance_mysql_rampup_class" {
+  type = string
+  default = "db.t2.micro"
+}
+
+variable "db_instance_mysql_rampup_name" {
+  type = string
+  default = "arey-dbInstance-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+}
+
+variable "db_instance_mysql_rampup_port" {
+  type = string
+  default = "3306"
+}
+
+variable "db_instance_mysql_rampup_az" {
+  type = string
+  default = "us-west-2c"
+}
+
+variable "db_instance_mysql_rampup_group_name" {
+  type = string
+  default = "arey-dbgroupname-anarey-13022020-awssetuprampup2-stop"
+}
+
+variable "aws_db_instance_username" {
+  type = string
+}
+
+variable "aws_db_instance_password" {
+  type = string
+}
+
+variable "autoscaling_group_rampup_type" {
+  type = string
+  default = "t2.small"
+}
 
 
 

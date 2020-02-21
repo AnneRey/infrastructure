@@ -6,6 +6,11 @@ variable "aws_db_instance_storage_type" {
   type = string
 }
 
+variable "aws_db_instance_name" {
+  type = string
+}
+
+
 variable "aws_db_instance_engine" {
   type = string
 }
@@ -18,7 +23,7 @@ variable "aws_db_instance_class" {
   type = string
 }
 
-variable "aws_db_instance_name" {
+variable "aws_db_instance_username" {
   type = string
 }
 
@@ -35,10 +40,6 @@ variable "aws_db_instance_port" {
 }
 
 variable "aws_db_instance_az" {
-  type = string
-}
-
-variable "aws_db_instance_subnet_name" {
   type = string
 }
 
