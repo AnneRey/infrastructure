@@ -18,13 +18,6 @@ output "aws_instance_subnet_id" {
   value = "${aws_instance.aws_instance.subnet_id}"
 }
 
-output "aws_key_pair_key_name" {
-  value = "${aws_instance.aws_instance.key_name}"
-}
-
-output "aws_key_pair_key_pair_id" {
-  value = "${aws_instance.aws_instance.key_pair_id}"
-}
 
 
 

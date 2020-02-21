@@ -14,4 +14,12 @@ variable "aws_instance_name" {
   type = string
 }
 
+variable "aws_instance_security_group" {
+  type = list
+}
+
+variable "aws_instance_key_name" {
+  type = string
+}
+
 
