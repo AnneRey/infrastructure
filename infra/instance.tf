@@ -1,4 +1,4 @@
-module "instance_rampup" {
+/*module "instance_rampup" {
   source                      = "../modules/instance"
   aws_instance_ami            = "${var.instance_rampup_ami}"
   aws_instance_type           = "${var.instance_rampup_type}"
@@ -36,7 +36,7 @@ module "instance_rampup_4" {
   aws_instance_name           = "${var.instance_rampup_name_4}"
   aws_instance_key_name       = "${module.key_pair_rampup.aws_key_pair_name}"
   aws_instance_security_group = ["${module.security_group_cluster.aws_security_group_id}"]
-}
+}*/
 
 module "instance_rampup_bastion" {
   source                      = "../modules/instance"
@@ -46,6 +46,7 @@ module "instance_rampup_bastion" {
   aws_instance_name           = "${var.instance_rampup_name_bastion}"
   aws_instance_key_name       = "${module.key_pair_rampup.aws_key_pair_name}"
   aws_instance_security_group = ["${module.security_group_bastion.aws_security_group_id}"]
+  aws_instance_public_ip      = "true"
 }
 
 module "instance_rampup_nat" {

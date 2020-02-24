@@ -8,19 +8,12 @@ variable "aws_security_group_rule_cidr_type" {
   default = ""
 }
 
-variable "aws_security_group_rule_cidr_from_port" {
+variable "aws_security_group_rule_from_port" {
   type = string
-  default = ""
 }
 
-variable "aws_security_group_rule_cidr_to_port" {
+variable "aws_security_group_rule_to_port" {
   type = string
-  default = ""
-}
-
-variable "aws_security_group_rule_cidr_protocol" {
-  type = string
-  default = ""
 }
 
 variable "aws_security_group_rule_cidr_blocks" {
@@ -28,34 +21,19 @@ variable "aws_security_group_rule_cidr_blocks" {
   default = []
 }
 
-variable "aws_security_group_rule_security_group_cidr_id" {
-  type = string
-  default = ""
-}
 
 variable "aws_security_group_rule_security_group_id_flag" {
   type = string
   default = ""
 }
 
-variable "aws_security_group_rule_security_group_type" {
+variable "aws_security_group_rule_type" {
   type = string
-  default = ""
 }
 
-variable "aws_security_group_rule_security_group_port" {
+variable "aws_security_group_rule_protocol" {
   type = string
-  default = ""
-}
-
-variable "aws_security_group_rule_security_group_to_port" {
-  type = string
-  default = ""
-}
-
-variable "aws_security_group_rule_security_group_protocol" {
-  type = string
-  default = ""
+  default = "TCP"
 }
 
 variable "aws_security_group_rule_security_group_source_id" {
@@ -65,5 +43,4 @@ variable "aws_security_group_rule_security_group_source_id" {
 
 variable "aws_security_group_rule_security_group_id" {
   type = string
-  default = ""
 }

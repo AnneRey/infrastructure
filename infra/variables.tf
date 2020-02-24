@@ -89,7 +89,7 @@ variable "instance_rampup_type" {
   default = "t2.micro"
 }
 
-variable "instance_rampup_name" {
+/*variable "instance_rampup_name" {
   type = string
   default = "arey-frontEnd01-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
 }
@@ -107,7 +107,7 @@ variable "instance_rampup_name_3" {
 variable "instance_rampup_name_4" {
   type = string
   default = "arey-backEnd02-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}
+}*/
 
 variable "instance_rampup_name_nat" {
   type = string
@@ -139,15 +139,15 @@ variable "autoscaling_group_rampup_launch_name" {
   default = "arey-launchConfiguration-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
 }
 
-variable "autoscaling_group_rampup_placement_name" {
-  type = string
-  default = "arey-placementGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}
+#variable "autoscaling_group_rampup_placement_name" {
+ # type = string
+  #default = "arey-placementGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+#}
 
-variable "autoscaling_group_rampup_placement_strategy" {
-  type = string
-  default = "cluster"
-}
+#variable "autoscaling_group_rampup_placement_strategy" {
+ # type = string
+  #default = "cluster"
+#}
 
 variable "app_load_balancer_rampup_name" {
   type = string
@@ -157,11 +157,6 @@ variable "app_load_balancer_rampup_name" {
 variable "security_group_alb_name" {
   type = string
   default = "arey-ALBSecurityGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}
-
-variable "security_group_alb_flag" {
-  type = string
-  default = "not empty"
 }
 
 variable "security_group_alb_type" {
@@ -207,11 +202,6 @@ variable "security_group_rds_name" {
 variable "security_group_kubernetes_name" {
   type = string
   default = "arey-kubernetesSecurityGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}
-
-variable "security_group_rules_cluster_flag" {
-  type = string
-  default = "not empty"
 }
 
 variable "security_group_rules_cluster_ingress_3030_type" {
@@ -274,11 +264,6 @@ variable "security_group_rules_cluster_ingress_self_protocol" {
   default = "tcp"
 }
 
-variable "security_group_rules_bastion_flag" {
-  type = string
-  default = "not empty"
-}
-
 variable "security_group_rules_bastion_type" {
   type = string
   default = "ingress"
@@ -301,7 +286,7 @@ variable "subnet_rampup_subnet_name_5" {
 
 variable "instance_rampup_kube_type" {
   type = string
-  default = "instance_rampup_kube_type"
+  default = "t2.micro"
 }
 
 variable "instance_rampup_kube_name" {
@@ -316,17 +301,7 @@ variable "key_pair_rampup_name" {
 
 variable "key_pair_rampup_public_key" {
   type = string
-  default = "---- BEGIN SSH2 PUBLIC KEY ---- AAAAB3NzaC1yc2EAAAABJQAAAQEAx16r5PPV+Fohp2ecpqYOaH6aCJZcW+3VOIIrDCm2Znydu0J7kw2V2YWgMMHsvEGfRzL4qOYopD1CRM5KAZBnv/XkLtP2+7bKEF2XZ6WJR1QJIOsMxFeiiFmgMt3kiNrymuxw9ORn7MDK3+bL8XjrQgykvnzeEYL1drbgUsjwzfaJoRBGtgQ4vMqZVlARC1BiHOn+FwmZncdMsd1QP4JTgTKBnfvZY9lG5INhhhLNMTZRET5neDZOzzPsjC+jPTDW+AVsKEdG7BA1Lbc2svXK4hvxxqv5ZdfHTrtftmdw7N3LGr0Y0IWB1mE8W6ySPSduzoEZ+eLEJ9sM4agLRLwV8Q==---- END SSH2 PUBLIC KEY ----"
-}
-
-variable "security_group_alb_group_flag" {
-  type = string
-  default = ""
-}
-
-variable "security_group_rules_cluster_cidr_flag" {
-  type = string
-  default = ""
+  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDwfgiiyAucMLwHN9p35Q+Rb4c1c4CGDTQlHcL5/o0PNza7LgSiZgxzJo5FMqg569sfC271RyFNmUDUci2hT81DmDDXWrwstFS6ZlduYcNlAkYD+WkqCTMIjuUQ8vLAazkv65qKZ17KZpVkeUKbf/26J7xGMpjHUjqu6Q2q4b8LNw== anarey@EN911055"
 }
 
 variable "security_group_rules_cluster_ingress_kube_tcp_type" {
@@ -369,11 +344,6 @@ variable "security_group_rules_cluster_ingress_kube_udp_protocol" {
   default = "udp"
 }
 
-variable "security_group_rules_bastion_group_flag" {
-  type = string
-  default = ""
-}
-
 variable "security_group_bastion_from_port" {
   type = string
   default = "22"
@@ -394,16 +364,6 @@ variable "security_group_bastion_cidr_blocks" {
   default = ["0.0.0.0/0"]
 }
 
-variable "security_group_rules_rds_group_flag" {
-  type = string
-  default = "not empty"
-}
-
-variable "security_group_rules_rds_cidr_flag" {
-  type = string
-  default = ""
-}
-
 variable "security_group_rules_rds_type" {
   type = string
   default = "ingress"
@@ -422,16 +382,6 @@ variable "security_group_rules_rds_to_port" {
 variable "security_group_rules_rds_protocol" {
   type = string
   default = "tcp"
-}
-
-variable "security_group_rules_kube_group_flag" {
-  type = string
-  default = "not empty"
-}
-
-variable "security_group_rules_kube_cidr_flag" {
-  type = string
-  default = ""
 }
 
 variable "security_group_rules_kube_type" {
@@ -481,7 +431,7 @@ variable "db_instance_mysql_rampup_class" {
 
 variable "db_instance_mysql_rampup_name" {
   type = string
-  default = "arey-dbInstance-AnaRey-13022020-AWSSETUPRAMPUP2-stop"
+  default = "areydbInstanceAnaRey13022020AWSSETUPRAMPUP2stop"
 }
 
 variable "db_instance_mysql_rampup_port" {
@@ -509,7 +459,7 @@ variable "aws_db_instance_password" {
 
 variable "autoscaling_group_rampup_type" {
   type = string
-  default = "t2.small"
+  default = "t2.micro"
 }
 
 

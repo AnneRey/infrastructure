@@ -26,12 +26,8 @@ variable "aws_launch_configuration_instance_type" {
   type = string
 }
 
-variable "aws_placement_group_name" {
-  type = string
-}
-
-variable "aws_placement_group_strategy" {
-  type = string
+variable "aws_launch_configuration_security_group" {
+  type = list
 }
 
 

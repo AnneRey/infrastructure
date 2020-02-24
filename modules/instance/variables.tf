@@ -22,4 +22,8 @@ variable "aws_instance_key_name" {
   type = string
 }
 
+variable "aws_instance_public_ip" {
+  type = bool
+  default = "false"
+}
 

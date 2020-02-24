@@ -11,6 +11,7 @@ resource "aws_db_instance" "aws_db_instance" {
   port                   = "${var.aws_db_instance_port}"
   availability_zone      = "${var.aws_db_instance_az}"
   db_subnet_group_name   = "${aws_db_subnet_group.aws_db_subnet_group.name}"
+  skip_final_snapshot    = "true"
 }
 
 resource "aws_db_subnet_group" "aws_db_subnet_group" {
