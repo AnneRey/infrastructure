@@ -481,7 +481,7 @@ variable "db_instance_mysql_rampup_class" {
 
 variable "db_instance_mysql_rampup_name" {
   type = string
-  default = "arey-dbInstance-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+  default = "arey-dbInstance-AnaRey-13022020-AWSSETUPRAMPUP2-stop"
 }
 
 variable "db_instance_mysql_rampup_port" {
