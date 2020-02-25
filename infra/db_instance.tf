@@ -10,7 +10,7 @@ module "db_instance_mysql_rampup" {
   aws_db_instance_port               = "${var.db_instance_mysql_rampup_port}"
   aws_db_instance_az                 = "${var.db_instance_mysql_rampup_az}"
   aws_db_subnet_group_name           = "${var.db_instance_mysql_rampup_group_name}"
-  aws_db_subnet_group_subnet_ids     = ["${module.subnet_rampup_4.aws_subnet_id}", "${module.subnet_rampup_2.aws_subnet_id}","${module.subnet_rampup.aws_subnet_id}","${module.subnet_rampup_3.aws_subnet_id}"]
+  aws_db_subnet_group_subnet_ids     = ["${module.subnet_rampup_4.aws_subnet_id}", "${module.subnet_rampup_2.aws_subnet_id}"]
   aws_db_instance_username           = "${var.aws_db_instance_username}"
   aws_db_instance_password           = "${var.aws_db_instance_password}"
 }

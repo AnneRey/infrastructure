@@ -35,12 +35,12 @@ variable "subnet_rampup_cidr_block"{
 
 variable "subnet_rampup_cidr_block_2"{
   type = string
-  default = "10.0.3.0/24"
+  default = "10.0.2.0/24"
 }
 
 variable "subnet_rampup_cidr_block_3"{
   type = string
-  default = "10.0.2.0/24"
+  default = "10.0.3.0/24"
 }
 
 variable "subnet_rampup_cidr_block_4"{
@@ -89,26 +89,6 @@ variable "instance_rampup_type" {
   default = "t2.micro"
 }
 
-/*variable "instance_rampup_name" {
-  type = string
-  default = "arey-frontEnd01-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}
-
-variable "instance_rampup_name_2" {
-  type = string
-  default = "arey-frontEnd02-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}
-
-variable "instance_rampup_name_3" {
-  type = string
-  default = "arey-backEnd01-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}
-
-variable "instance_rampup_name_4" {
-  type = string
-  default = "arey-backEnd02-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-}*/
-
 variable "instance_rampup_name_nat" {
   type = string
   default = "arey-natInstance-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
@@ -138,16 +118,6 @@ variable "autoscaling_group_rampup_launch_name" {
   type = string
   default = "arey-launchConfiguration-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
 }
-
-#variable "autoscaling_group_rampup_placement_name" {
- # type = string
-  #default = "arey-placementGroup-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
-#}
-
-#variable "autoscaling_group_rampup_placement_strategy" {
- # type = string
-  #default = "cluster"
-#}
 
 variable "app_load_balancer_rampup_name" {
   type = string
@@ -441,7 +411,7 @@ variable "db_instance_mysql_rampup_port" {
 
 variable "db_instance_mysql_rampup_az" {
   type = string
-  default = "us-west-2c"
+  default = "us-west-2b"
 }
 
 variable "db_instance_mysql_rampup_group_name" {
@@ -461,6 +431,258 @@ variable "autoscaling_group_rampup_type" {
   type = string
   default = "t2.micro"
 }
+
+variable "aws_security_group_rules_nat_cluster_type" {
+  type = string
+  default = "ingress"
+}
+
+variable "aws_security_group_rules_nat_cluster_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "aws_security_group_rules_nat_cluster_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "aws_security_group_rules_nat_cluster_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_nat_name" {
+  type = string
+  default = "arey-natSG-anarey-13022020-awssetuprampup2-stop"
+}
+
+variable "aws_security_group_rules_nat_bastion_type" {
+  type = string
+  default = "ingress"
+}
+
+variable "aws_security_group_rules_nat_bastion_from_port" {
+  type = string
+  default = "22"
+}
+
+variable "aws_security_group_rules_nat_bastion_to_port" {
+  type = string
+  default = "22"
+}
+
+variable "aws_security_group_rules_nat_bastion_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_bastion_outbound_type" {
+  type = string
+  default ="egress"
+}
+
+variable "security_group_bastion_outbound_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "security_group_bastion_outbound_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "security_group_bastion_outbound_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_bastion_outbound_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_rules_nat_outbound_type" {
+  type = string
+  default = "egress"
+}
+
+variable "security_group_rules_nat_outbound_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_rules_nat_outbound_from_port" {
+  type = string
+  default = "80"
+}
+
+variable "security_group_rules_nat_outbound_to_port" {
+  type = string
+  default = "80"
+}
+
+variable "security_group_rules_nat_outbound_cidr_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_rules_nat_ingress_type" {
+  type = string
+  default = "ingress"
+}
+
+variable "security_group_rules_nat_ingress_from_port" {
+  type = string
+  default = "80"
+}
+
+variable "security_group_rules_nat_ingress_to_port" {
+  type = string
+  default = "80"
+}
+
+variable "security_group_rules_nat_ingress_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_rules_nat_ingress_cidr_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_rules_nat_outbound_tcp_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "security_group_rules_nat_outbound_tcp_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "security_group_rules_nat_outbound_tcp_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_rules_nat_outbound_tcp_cidr_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_rules_kube_outbound_type" {
+  type = string
+  default = "egress"
+}
+
+variable "security_group_rules_kube_outbound_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "security_group_rules_kube_outbound_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "security_group_rules_kube_outbound_protocol" {
+  type = string 
+  default = "tcp"
+}
+
+variable "security_group_rules_kube_outbound_cidr_block" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_alb_outbound_type" {
+  type = string
+  default = "egress"
+}
+
+variable "security_group_alb_outbound_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "security_group_alb_outbound_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "security_group_alb_outbound_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_alb_outbound_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_rules_cluster_outbound_type" {
+  type = string
+  default = "egress"
+}
+
+variable "security_group_cluster_outbound_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "security_group_cluster_outbound_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "security_group_cluster_outbound_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_cluster_outbound_cidr_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_rds_outbound_type" {
+  type = string
+  default = "egress"
+}
+
+variable "security_group_rds_outbound_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "security_group_rds_outbound_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "security_group_rds_outbound_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_rds_outbound_blocks" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

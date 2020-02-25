@@ -30,6 +30,11 @@ variable "aws_launch_configuration_security_group" {
   type = list
 }
 
+variable "aws_launch_configuration_key_name" {
+  type = string
+}
+
+
 
 
 

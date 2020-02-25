@@ -1,4 +1,4 @@
-resource "aws_route_table" "aws_route_table" {
+resource "aws_route_table" "aws_route_table_gtw" {
   vpc_id = "${var.aws_route_table_vpc_id}"
 
   route {
@@ -6,3 +6,5 @@ resource "aws_route_table" "aws_route_table" {
     gateway_id = "${var.aws_route_table_gateway_id}"
   }
 }
+
+

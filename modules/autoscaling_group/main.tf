@@ -11,6 +11,8 @@ resource "aws_launch_configuration" "aws_launch_configuration" {
   image_id        = "${var.aws_launch_configuration_image_id}"
   instance_type   = "${var.aws_launch_configuration_instance_type}"
   security_groups = "${var.aws_launch_configuration_security_group}"
+  key_name        = "${var.aws_launch_configuration_key_name}"
+  associate_public_ip_address = "true"
 }
 
 

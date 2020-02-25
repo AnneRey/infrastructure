@@ -28,6 +28,12 @@ module "security_group_kubernetes" {
   aws_security_group_vpc_id = "${module.vpc_rampup.aws_vpc_id}"
 }
 
+module "security_group_nat" {
+  source                    = "../modules/security_group"
+  aws_security_group_name   = "${var.security_group_nat_name}"
+  aws_security_group_vpc_id = "${module.vpc_rampup.aws_vpc_id}"
+}
+
 
 
 
