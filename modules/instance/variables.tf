@@ -27,3 +27,7 @@ variable "aws_instance_public_ip" {
   default = "false"
 }
 
+variable "aws_instance_dest_check" {
+  type = bool
+  default = "true"
+}

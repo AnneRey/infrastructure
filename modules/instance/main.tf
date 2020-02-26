@@ -5,6 +5,7 @@ resource "aws_instance" "aws_instance" {
   key_name                    = "${var.aws_instance_key_name}"
   vpc_security_group_ids      = "${var.aws_instance_security_group}"
   associate_public_ip_address = "${var.aws_instance_public_ip}"
+  source_dest_check           = "${var.aws_instance_dest_check}"
 
   tags = {
     Name = "${var.aws_instance_name}"

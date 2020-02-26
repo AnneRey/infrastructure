@@ -34,6 +34,12 @@ variable "aws_launch_configuration_key_name" {
   type = string
 }
 
+variable "aws_instance_dest_check" {
+  type = string
+  default = "true"
+}
+
+
 
 
 

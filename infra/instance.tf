@@ -19,6 +19,7 @@ module "instance_rampup_nat" {
   aws_instance_key_name       = "${module.key_pair_rampup.aws_key_pair_name}"
   aws_instance_security_group = ["${module.security_group_nat.aws_security_group_id}"]
   aws_instance_public_ip      = "true"
+  aws_instance_dest_check     = "false"
 }
 
 module "instance_rampup_kube" {
