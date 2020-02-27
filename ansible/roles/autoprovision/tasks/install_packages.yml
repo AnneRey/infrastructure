@@ -1,9 +1,9 @@
 - name: Install packages for bastion
   apt:
-    name: "{{package}}"
+    name: "{{item}}"
   loop: "{{install.packages}}"
 
 - name: Install pip packages
   pip:
-    name: "{{package}}"
+    name: "{{item}}"
   loop: "{{install.pip}}"
