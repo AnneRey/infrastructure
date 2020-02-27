@@ -31,3 +31,9 @@ variable "aws_instance_dest_check" {
   type = bool
   default = "true"
 }
+
+variable "aws_instance_user_data" {
+  type = string
+  default = ""
+}
+

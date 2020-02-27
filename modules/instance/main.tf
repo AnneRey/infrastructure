@@ -6,11 +6,14 @@ resource "aws_instance" "aws_instance" {
   vpc_security_group_ids      = "${var.aws_instance_security_group}"
   associate_public_ip_address = "${var.aws_instance_public_ip}"
   source_dest_check           = "${var.aws_instance_dest_check}"
+  user_data                   = "${var.aws_instance_user_data}"
 
   tags = {
     Name = "${var.aws_instance_name}"
   }
 }
+
+
 
 
 

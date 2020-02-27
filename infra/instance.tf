@@ -8,6 +8,22 @@ module "instance_rampup_bastion" {
   aws_instance_key_name       = "${module.key_pair_rampup.aws_key_pair_name}"
   aws_instance_security_group = ["${module.security_group_bastion.aws_security_group_id}"]
   aws_instance_public_ip      = "true"
+  aws_instance_user_data = <<EOF
+  #! /bin/bash
+  sudo apt-get update
+  sudo apt-get install ansible -y 
+  mkdir infrastructure
+  cd infrastructure
+  git init
+  git clone https://github.com/AnneRey/infrastructure.git
+  cd ../
+  mkdir ansible
+  touch ansible/playbook-local.yml
+  mkdir ansible/roles
+  mkdir ansible/roles/autoprovision
+  mkdir ansible/roles/autoprovision/tasks
+  touch ansible/roles/autoprovision/tasks/main.yml
+  EOF
 }
 
 module "instance_rampup_nat" {
