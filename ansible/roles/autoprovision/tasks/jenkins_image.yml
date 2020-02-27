@@ -3,3 +3,11 @@
     name: "{{image}}"
     source: pull
   loop: "{{docker_image.image}}"
+
+- name: running jenkins container
+  docker_container:
+    name: jenkins
+    image: "{{docker_image.image}}"
+    state: started
+
+  

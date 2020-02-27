@@ -1,5 +1,7 @@
 ---
-- hosts: localhost
+
+- name: Provision workstation Playbook
+  hosts: localhost
   connection: local
   sudo: True
   vars_files: 
