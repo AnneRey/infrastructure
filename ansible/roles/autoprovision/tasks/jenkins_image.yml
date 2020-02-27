@@ -9,5 +9,7 @@
     name: jenkins
     image: "{{docker_image.image}}"
     state: started
+    ports:
+      - "8080:8080"
 
   

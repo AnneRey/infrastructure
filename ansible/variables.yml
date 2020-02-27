@@ -1,6 +1,5 @@
 install:
   packages:
-    - terraform
     - default-jdk
     - python-pip
   pip:
@@ -9,3 +8,8 @@ install:
 docker_image:
   image:
     - jenkinsci/blueocean
+
+terraform_version: "0.12.20"
+terraform_url: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
+terraform_directory: "/opt/terraform"
+terraform_zip: "/tmp/terraform.zip"

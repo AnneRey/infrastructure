@@ -1,13 +1,12 @@
 ---
 
-- name: Provision workstation Playbook
-  hosts: localhost
+- hosts: localhost
   connection: local
-  sudo: True
+  become: true
   vars_files: 
     - variables.yml
-  tasks: 
-    - name: Install packages
-      include_role:
-        name: autoprovision
+  tasks:
+  - name: autoprovision
+    include_role:
+      name: autoprovision
   
