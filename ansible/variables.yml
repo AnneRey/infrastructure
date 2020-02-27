@@ -1,0 +1,7 @@
+install:
+  packages:
+    - terraform
+    - default-jdk
+    - python-pip
+  pip:
+    - docker

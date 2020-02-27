@@ -1,0 +1,4 @@
+- name: Install packages for bastion
+  apt:
+    name: "{{package}}"
+  loop: "{{install.packages}}"

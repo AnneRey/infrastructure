@@ -1,0 +1,10 @@
+---
+
+- hosts: localhost
+  connection: local
+  sudo: True
+  tasks: 
+    - name: Install packages
+      include_role:
+        name: autoprovision
+  
