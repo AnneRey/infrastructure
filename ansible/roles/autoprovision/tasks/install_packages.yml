@@ -2,3 +2,8 @@
   apt:
     name: "{{package}}"
   loop: "{{install.packages}}"
+
+- name: Install pip packages
+  pip:
+    name: "{{package}}"
+  loop: "{{install.pip}}"

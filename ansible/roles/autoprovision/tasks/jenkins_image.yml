@@ -1,0 +1,5 @@
+- name: get jenkins image
+  docker_image:
+    name: "{{image}}"
+    source: pull
+  loop: "{{docker_image.image}}"

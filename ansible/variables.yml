@@ -5,3 +5,7 @@ install:
     - python-pip
   pip:
     - docker
+
+docker_image:
+  image:
+    - jenkinsci/blueocean

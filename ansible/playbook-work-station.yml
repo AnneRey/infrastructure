@@ -1,8 +1,9 @@
 ---
-
 - hosts: localhost
   connection: local
   sudo: True
+  vars_files: 
+    - variables.yml
   tasks: 
     - name: Install packages
       include_role:
