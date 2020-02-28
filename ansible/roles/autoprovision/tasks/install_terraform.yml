@@ -1,23 +1,23 @@
-- name: Wget terraform for version "{{terraform.terraform_version}}"
+- name: Wget terraform for version "{{terraform_version}}"
   get_url:
-    url: "{{terraform.terraform_url}}"
-    dest: "{{terraform.terraform_zip}}"
+    url: "{{terraform_url}}"
+    dest: "{{terraform_zip}}"
     mode: '0770'
 
 - name: Create directory for terraform
   file: 
-    path: "{{terraform.terraform_directory}}"
+    path: "{{terraform_directory}}"
     state: directory
 
 - name: Unarchive .zip of terraform into 
   unarchive: 
-    src: "{{terraform.terraform_zip}}"
-    dest: "{{terraform.terraform_directory}}"
+    src: "{{terraform_zip}}"
+    dest: "{{terraform_directory}}"
     copy: no
 
 - name: Adding Terraform to path
   file: 
-    src: "{{terraform.terraform_directory}}"
+    src: "{{terraform_directory}}"
     dest: /usr/bin/terraform
     state: link
 

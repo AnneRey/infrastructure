@@ -1,12 +1,12 @@
 - name: Pulling ec2.py into /etc/ansible/
   get_url:
-    url: "{{aws_boto.aws_ec2.py_url}}"
+    url: "{{aws_ec2.py_url}}"
     dest: /etc/ansible/
     mode: '0770'
 
 - name: Pulling ec2.ini file into /etc/ansible/
   get_url:
-    url: "{{aws_boto.aws_ec2.ini_url}}"
+    url: "{{aws_ec2.ini_url}}"
     dest: /etc/ansible/
     mode: '0770'
 
@@ -22,6 +22,6 @@
   command: "{{item}}"
   with_items:
     - ssh-agent bash
-    - ssh-agent add /ssh-key/aws
+    - ssh-agent add ../../ssh-key/aws
 
  

@@ -1,6 +1,6 @@
 ---
 
-- hosts: tag_Slave
+- hosts: tag_arey_slave
   user: ubuntu
   become: true
   vars_files: 
