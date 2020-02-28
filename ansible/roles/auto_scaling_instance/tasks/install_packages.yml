@@ -1,0 +1,4 @@
+- name: Install packages for bastion
+  apt:
+    name: "{{item}}"
+  loop: "{{install.auto_scaling_instances.packages}}"

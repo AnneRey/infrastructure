@@ -1,0 +1,11 @@
+---
+
+- hosts: tag_Slave
+  user: ubuntu
+  become: true
+  vars_files: 
+    - variables.yml
+  tasks:
+  - name: auto_scaling_instance
+    include_role:
+      name: auto_scaling_instance

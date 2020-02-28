@@ -4,6 +4,34 @@ resource "aws_autoscaling_group" "aws_autoscaling_group" {
   min_size             = "${var.aws_autoscaling_group_min_size}"
   launch_configuration = "${aws_launch_configuration.aws_launch_configuration.name}"
   vpc_zone_identifier  = "${var.aws_autoscaling_group_vpc_zone_identifier}"
+  
+  tags = [
+  {
+    key = "Name"
+    value = "arey-slave"
+    propagate_at_launch = "true"
+  },
+  {
+    key = "created_by"
+    value = "Ana Rey"
+    propagate_at_launch = "true"
+  },
+  {
+    key = "creation_date"
+    value = "13/02/2020"
+    propagate_at_launch = "true"
+  },
+  {
+    key = "project_name"
+    value = "FINAL_RAMPUP"
+    propagate_at_launch = "true"
+  },
+  {
+    key = "stop"
+    value = "stop"
+    propagate_at_launch = "true"
+  }
+  ]
 }
 
 resource "aws_launch_configuration" "aws_launch_configuration" {

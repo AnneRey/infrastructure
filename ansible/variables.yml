@@ -1,17 +1,26 @@
 install:
-  packages:
-    - default-jdk
-    - python-pip
-    - docker.io
-    - unzip
-  pip:
-    - docker
+  localhost:
+    packages:
+      - default-jdk
+      - python-pip
+      - docker.io
+      - unzip
+    pip:
+      - docker
+  auto_scaling_instances:
+    packages:
+      - docker.io
 
 docker_image:
   image:
     - jenkinsci/blueocean
 
-terraform_version: "0.12.20"
-terraform_url: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
-terraform_directory: "/opt/terraform"
-terraform_zip: "/tmp/terraform.zip"
+terraform:
+  terraform_version: "0.12.20"
+  terraform_url: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
+  terraform_directory: "/opt/terraform"
+  terraform_zip: "/tmp/terraform.zip"
+
+aws_boto:
+  aws_ec2.py_url: "https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py"
+  aws_ec2.ini_url: "https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.ini"
