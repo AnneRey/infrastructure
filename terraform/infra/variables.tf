@@ -672,7 +672,15 @@ variable "security_group_rds_outbound_blocks" {
   default = ["0.0.0.0/0"]
 }
 
+variable "security_group_bastion_from_port_8080" {
+  type = string
+  default = "8080"
+}
 
+variable "security_group_bastion_to_port_8080" {
+  type = string
+  default = "8080"
+}
 
 
 

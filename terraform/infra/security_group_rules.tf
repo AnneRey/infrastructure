@@ -78,6 +78,17 @@ module "security_group_rules_bastion_local" {
   aws_security_group_rule_cidr_blocks       = "${var.security_group_bastion_cidr_blocks}"
 }
 
+module "security_group_rules_bastion_8080" {
+  source                                    = "../modules/security_group_rules"
+  aws_security_group_rule_cidr_flag         = "true"
+  aws_security_group_rule_type              = "${var.security_group_rules_bastion_type}"
+  aws_security_group_rule_from_port         = "${var.security_group_bastion_from_port_8080}"
+  aws_security_group_rule_to_port           = "${var.security_group_bastion_to_port_8080}"
+  aws_security_group_rule_protocol          = "${var.security_group_bastion_protocol}"
+  aws_security_group_rule_security_group_id = "${module.security_group_bastion.aws_security_group_id}"
+  aws_security_group_rule_cidr_blocks       = "${var.security_group_bastion_cidr_blocks}"
+}
+
 module "security_group_rules_rds" {
   source                                           = "../modules/security_group_rules"
   aws_security_group_rule_security_group_id_flag   = "true"
