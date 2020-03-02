@@ -40,5 +40,6 @@ module "instance_rampup_kube" {
   aws_instance_name           = "${var.instance_rampup_kube_name}"
   aws_instance_key_name       = "${module.key_pair_rampup.aws_key_pair_name}"
   aws_instance_security_group = ["${module.security_group_kubernetes.aws_security_group_id}"]
+  aws_instance_kubespray_role = "kube-master"
 }
 

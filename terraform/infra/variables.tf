@@ -429,7 +429,7 @@ variable "aws_db_instance_password" {
 
 variable "autoscaling_group_rampup_type" {
   type = string
-  default = "t2.micro"
+  default = "t2.small"
 }
 
 variable "aws_security_group_rules_nat_cluster_type" {
