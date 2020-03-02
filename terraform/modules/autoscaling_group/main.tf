@@ -30,6 +30,11 @@ resource "aws_autoscaling_group" "aws_autoscaling_group" {
     key = "stop"
     value = "stop"
     propagate_at_launch = "true"
+  },
+  {
+    key = "kubespray-role"
+    value = "kube-node"
+    propagate_at_launch = "true"
   }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 
-- hosts: tag_arey_slave
+- hosts: tag_Name_arey_slave
   user: ubuntu
   become: true
   vars_files: 
@@ -9,3 +9,4 @@
   - name: auto_scaling_instance
     include_role:
       name: auto_scaling_instance
+      

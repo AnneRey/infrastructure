@@ -5,8 +5,10 @@ install:
       - python-pip
       - docker.io
       - unzip
+      - python3-botocore
     pip:
       - docker
+      - boto3
   auto_scaling_instances:
     packages:
       - docker.io
@@ -19,6 +21,3 @@ terraform_version: "0.12.20"
 terraform_url: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
 terraform_directory: "/opt/terraform"
 terraform_zip: "/tmp/terraform.zip"
-
-aws_ec2.py_url: "https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py"
-aws_ec2.ini_url: "https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.ini"
