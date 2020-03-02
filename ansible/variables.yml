@@ -24,5 +24,4 @@ terraform_url: "https://releases.hashicorp.com/terraform/{{terraform_version}}/t
 terraform_directory: "/opt/terraform"
 terraform_zip: "/tmp/terraform.zip"
 
-kubespray_git: "https://github.com/kubernetes-incubator/kubespray.git"
-kubespray_dir: "/home/ubuntu/"
+

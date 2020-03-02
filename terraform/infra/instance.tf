@@ -9,6 +9,10 @@ module "instance_rampup_bastion" {
   aws_instance_security_group = ["${module.security_group_bastion.aws_security_group_id}"]
   aws_instance_public_ip      = "true"
   aws_instance_user_data = <<EOF
+  MIME-Version: 1.0
+  Content-Type: multipart/mixed; boundary="==MYBOUNDARY=="
+  --==MYBOUNDARY==
+  Content-Type: text/x-shellscript; charset="us-ascii"
   #! /bin/bash
   exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
   sudo apt-get update -y
@@ -17,6 +21,9 @@ module "instance_rampup_bastion" {
   sudo apt-get update -y 
   sudo apt-get install ansible -y
   sudo apt-get upgrade ansible -y
+  git clone https://github.com/AnneRey/infrastructure-configuration.git
+  git clone https://github.com/kubernetes-incubator/kubespray.git
+  --==MYBOUNDARY==
   EOF
 }
 

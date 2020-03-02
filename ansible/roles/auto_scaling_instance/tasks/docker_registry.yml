@@ -1,0 +1,21 @@
+- name: Create Docker Registry
+  docker_container:
+    name: registry
+    image: registry:2
+    state: started
+    restart_policy: unless-stopped
+    volumes:
+      - /etc/docker/registry:/var/lib/registry
+    published_ports:
+      - "5000:5000"
+
+- name: Test registry connection
+  assert:
+    that: 
+    - container_state.stdout == 'true'
+
+- name: Authenticate user with the registry
+  docker_login:
+    registry_url: "5000:5000"
+    username: "{{ username_registry }}"
+    password: "{{ password_registry }}"
