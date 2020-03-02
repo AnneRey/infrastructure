@@ -1,0 +1,10 @@
+- name: create directory for kubespray repo
+  file:
+    path: "{{kubespray_dir}}"
+    state: directory
+
+- name: cloning kubespray repo en workstation
+  git:
+    repo: "{{kubespray_git}}"
+    clone: yes
+    dest: "{{kubespray_dir}}"

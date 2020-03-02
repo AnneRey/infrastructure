@@ -23,17 +23,23 @@ variable "aws_instance_key_name" {
 }
 
 variable "aws_instance_public_ip" {
-  type = bool
+  type    = bool
   default = "false"
 }
 
 variable "aws_instance_dest_check" {
-  type = bool
+  type    = bool
   default = "true"
 }
 
 variable "aws_instance_user_data" {
-  type = string
+  type    = string
   default = ""
 }
+
+variable "aws_instance_kubespray_role" {
+  type    = string
+  default = ""
+}
+
 

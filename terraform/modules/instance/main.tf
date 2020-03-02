@@ -9,11 +9,12 @@ resource "aws_instance" "aws_instance" {
   user_data                   = "${var.aws_instance_user_data}"
 
   tags = {
-    Name          = "${var.aws_instance_name}"
-    created_by    = "Ana Rey"
-    creation_date = "13/02/2020"
-    project_name  = "FINAL_RAMPUP"
-    stop          = "stop"
+    Name           = "${var.aws_instance_name}"
+    created_by     = "Ana Rey"
+    creation_date  = "13/02/2020"
+    project_name   = "FINAL_RAMPUP"
+    kubespray-role = "${var.aws_instance_kubespray_role}"
+    stop           = "stop"
   }
 
 }
