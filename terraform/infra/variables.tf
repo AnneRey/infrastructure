@@ -91,12 +91,12 @@ variable "instance_rampup_type" {
 
 variable "instance_rampup_name_nat" {
   type = string
-  default = "arey-natInstance-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+  default = "arey-natInstance"
 }
 
 variable "instance_rampup_name_bastion" {
   type = string
-  default = "arey-bastion-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+  default = "arey-bastion"
 }
 
 variable "autoscaling_group_rampup_name" {
@@ -121,7 +121,7 @@ variable "autoscaling_group_rampup_launch_name" {
 
 variable "app_load_balancer_rampup_name" {
   type = string
-  default = "arey-ALB-Arey-rampup-stop"
+  default = "arey-ALB"
 }
 
 variable "security_group_alb_name" {
@@ -261,7 +261,7 @@ variable "instance_rampup_kube_type" {
 
 variable "instance_rampup_kube_name" {
   type = string
-  default = "arey-kubeInstance-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
+  default = "arey-kubeInstance"
 }
 
 variable "key_pair_rampup_name" {
@@ -401,7 +401,7 @@ variable "db_instance_mysql_rampup_class" {
 
 variable "db_instance_mysql_rampup_name" {
   type = string
-  default = "areydbInstanceAnaRey13022020AWSSETUPRAMPUP2stop"
+  default = "areydbInstance"
 }
 
 variable "db_instance_mysql_rampup_port" {

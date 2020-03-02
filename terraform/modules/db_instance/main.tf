@@ -4,7 +4,6 @@ resource "aws_db_instance" "aws_db_instance" {
   engine                 = "${var.aws_db_instance_engine}"
   engine_version         = "${var.aws_db_instance_engine_version}"
   instance_class         = "${var.aws_db_instance_class}"
-  name                   = "${var.aws_db_instance_name}"
   username               = "${var.aws_db_instance_username}"
   password               = "${var.aws_db_instance_password}"
   vpc_security_group_ids = "${var.aws_db_instance_security_groups_id}"
@@ -12,6 +11,15 @@ resource "aws_db_instance" "aws_db_instance" {
   availability_zone      = "${var.aws_db_instance_az}"
   db_subnet_group_name   = "${aws_db_subnet_group.aws_db_subnet_group.name}"
   skip_final_snapshot    = "true"
+
+  tags = {
+    Name          = "${var.aws_db_instance_name}"
+    created_by    = "Ana Rey"
+    creation_date = "13/02/2020"
+    project_name  = "FINAL_RAMPUP"
+    stop          = "stop"
+  }
+
 }
 
 resource "aws_db_subnet_group" "aws_db_subnet_group" {

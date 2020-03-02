@@ -1,4 +1,5 @@
-- name: Install packages for bastion
+- name: Install packages for slave
   apt:
     name: "{{item}}"
+    update_cache: yes
   loop: "{{install.auto_scaling_instances.packages}}"

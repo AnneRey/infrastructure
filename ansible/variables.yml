@@ -6,9 +6,11 @@ install:
       - docker.io
       - unzip
       - python3-botocore
+      - python-netaddr
     pip:
       - docker
       - boto3
+      - jinja2
   auto_scaling_instances:
     packages:
       - docker.io

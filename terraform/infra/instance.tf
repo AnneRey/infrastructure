@@ -10,19 +10,13 @@ module "instance_rampup_bastion" {
   aws_instance_public_ip      = "true"
   aws_instance_user_data = <<EOF
   #! /bin/bash
-  sudo apt-get update
-  sudo apt-get install ansible -y 
-  mkdir infrastructure
-  cd infrastructure
-  git init
-  git clone https://github.com/AnneRey/infrastructure.git
-  cd ../
-  mkdir ansible
-  touch ansible/playbook-local.yml
-  mkdir ansible/roles
-  mkdir ansible/roles/autoprovision
-  mkdir ansible/roles/autoprovision/tasks
-  touch ansible/roles/autoprovision/tasks/main.yml
+  exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+  sudo apt-get update -y
+  sudo apt-get install software-properties-common -y
+  sudo apt-add-repository ppa:ansible/ansible -y
+  sudo apt-get update -y 
+  sudo apt-get install ansible -y
+  sudo apt-get upgrade ansible -y
   EOF
 }
 
