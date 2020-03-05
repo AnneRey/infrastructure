@@ -7,6 +7,7 @@ install:
       - unzip
       - python3-botocore
       - python-netaddr
+      - python3-pip
     pip:
       - docker
       - boto3
@@ -14,6 +15,10 @@ install:
   auto_scaling_instances:
     packages:
       - docker.io
+      - python3
+      - python-pip
+    pip: 
+      - docker
 
 docker_image:
   image:

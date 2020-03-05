@@ -9,11 +9,6 @@
     published_ports:
       - "5000:5000"
 
-- name: Test registry connection
-  assert:
-    that: 
-    - container_state.stdout == 'true'
-
 - name: Authenticate user with the registry
   docker_login:
     registry_url: "5000:5000"

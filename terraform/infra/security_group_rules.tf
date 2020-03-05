@@ -222,3 +222,25 @@ module "security_group_rules_rds_outbound" {
   aws_security_group_rule_cidr_blocks       = "${var.security_group_rds_outbound_blocks}"
   aws_security_group_rule_security_group_id = "${module.security_group_rds.aws_security_group_id}"
 }
+
+module "security_group_rules_kube_inbound_tcp" {
+  source                                    = "../modules/security_group_rules"
+  aws_security_group_rule_cidr_flag         = "true"
+  aws_security_group_rule_type              = "${var.security_group_rules_kube_inbound_type}"
+  aws_security_group_rule_from_port         = "${var.security_group_rules_kube_inbound_from_port}"
+  aws_security_group_rule_to_port           = "${var.security_group_rules_kube_inbound_to_port}"
+  aws_security_group_rule_protocol          = "${var.security_group_rules_kube_inbound_protocol}"
+  aws_security_group_rule_security_group_id = "${module.security_group_kubernetes.aws_security_group_id}"
+  aws_security_group_rule_cidr_blocks       = "${var.security_group_rules_kube_inbound_cidr_block}"
+}
+
+module "security_group_rules_kube_inbound_udp" {
+  source                                    = "../modules/security_group_rules"
+  aws_security_group_rule_cidr_flag         = "true"
+  aws_security_group_rule_type              = "${var.security_group_rules_kube_inbound_type}"
+  aws_security_group_rule_from_port         = "${var.security_group_rules_kube_inbound_from_port}"
+  aws_security_group_rule_to_port           = "${var.security_group_rules_kube_inbound_to_port}"
+  aws_security_group_rule_protocol          = "${var.security_group_rules_kube_inbound_udp_protocol}"
+  aws_security_group_rule_security_group_id = "${module.security_group_kubernetes.aws_security_group_id}"
+  aws_security_group_rule_cidr_blocks       = "${var.security_group_rules_kube_inbound_cidr_block}"
+}

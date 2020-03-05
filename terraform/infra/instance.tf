@@ -21,6 +21,7 @@ sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt-get update -y 
 sudo apt-get install ansible -y
 sudo apt-get upgrade ansible -y
+cd /home/ubuntu/
 git clone https://github.com/AnneRey/infrastructure-configuration.git
 git clone https://github.com/kubernetes-incubator/kubespray.git
 --==MYBOUNDARY==

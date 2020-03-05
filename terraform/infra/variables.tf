@@ -106,12 +106,12 @@ variable "autoscaling_group_rampup_name" {
 
 variable "autoscaling_group_rampup_max_size" {
   type = string
-  default = "1"
+  default = "2"
 }
 
 variable "autoscaling_group_rampup_min_size" {
   type = string
-  default = "1"
+  default = "2"
 }
 
 variable "autoscaling_group_rampup_launch_name" {
@@ -256,7 +256,7 @@ variable "subnet_rampup_subnet_name_5" {
 
 variable "instance_rampup_kube_type" {
   type = string
-  default = "t2.micro"
+  default = "t2.small"
 }
 
 variable "instance_rampup_kube_name" {
@@ -681,6 +681,37 @@ variable "security_group_bastion_to_port_8080" {
   type = string
   default = "8080"
 }
+
+variable "security_group_rules_kube_inbound_type" {
+  type = string
+  default = "ingress"
+}
+
+variable "security_group_rules_kube_inbound_from_port" {
+  type = string
+  default = "0"
+}
+
+variable "security_group_rules_kube_inbound_to_port" {
+  type = string
+  default = "65535"
+}
+
+variable "security_group_rules_kube_inbound_protocol" {
+  type = string
+  default = "tcp"
+}
+
+variable "security_group_rules_kube_inbound_cidr_block" {
+  type = list
+  default = ["0.0.0.0/0"]
+}
+
+variable "security_group_rules_kube_inbound_udp_protocol" {
+  type = string
+  default = "udp"
+}
+
 
 
 
