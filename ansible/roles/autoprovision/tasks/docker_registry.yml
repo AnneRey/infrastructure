@@ -8,3 +8,4 @@
       - /etc/docker/registry:/var/lib/registry
     published_ports:
       - "5000:5000"
+    
