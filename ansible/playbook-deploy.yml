@@ -1,7 +1,7 @@
 ---
 
 - hosts: tag_Name__arey_slave
-  user: ubuntu
+  user: root
   become: true
   vars_files:
     - variables.yml

@@ -1,0 +1,9 @@
+- name: Create daemon.json
+  file:
+    path: "/etc/docker/daemon.js"
+    state: touch
+
+- name: Update daemon.json
+  file:
+    path: "/etc/docker/daemon.js"
+    content: '{"insecure-registries" : ["myregistrydomain.com:5000"]}'

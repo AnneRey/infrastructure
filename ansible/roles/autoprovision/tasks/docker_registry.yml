@@ -9,3 +9,7 @@
     published_ports:
       - "5000:5000"
     
+- name: Login into registry
+  docker_login:
+    username: user
+    password: "123"
