@@ -11,5 +11,7 @@
     
 - name: Login into registry
   docker_login:
+    registry: localhost:5000
     username: user
     password: "123"
+    state: present

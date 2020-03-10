@@ -1,9 +1,15 @@
 - name: Create daemon.json
   file:
-    path: "/etc/docker/daemon.js"
+    path: "/etc/docker/daemon.json"
     state: touch
 
 - name: Update daemon.json
   file:
-    path: "/etc/docker/daemon.js"
-    content: '{"insecure-registries" : ["myregistrydomain.com:5000"]}'
+    path: "/etc/docker/daemon.json"
+    content: '{"insecure-registries" : [":5000"]}'
+
+- name: Reset daemon
+  command: "service docker restart"
+
+- name: Check docker info
+  comand: "docker info"
