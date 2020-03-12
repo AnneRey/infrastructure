@@ -23,7 +23,15 @@ sudo apt-get install ansible -y
 sudo apt-get upgrade ansible -y
 cd /home/ubuntu/
 git clone https://github.com/AnneRey/infrastructure-configuration.git
-git clone https://github.com/kubernetes-incubator/kubespray.git
+git clone https://github.com/AnneRey/cluster-kube.git
+cd infrastructure-configuration
+git checkout developer
+cd ../
+cd cluster-kube
+git checkout developer
+cd ../
+cd infrastructure-configuration
+ansible-playbook playbook-work-station.yml 
 --==MYBOUNDARY==
 EOF
 }
@@ -44,10 +52,10 @@ module "instance_rampup_kube" {
   source                      = "../modules/instance"
   aws_instance_ami            = "${var.instance_rampup_ami}"
   aws_instance_type           = "${var.instance_rampup_kube_type}"
-  aws_instance_subnet_id      = "${module.subnet_rampup_4.aws_subnet_id}"
+  aws_instance_subnet_id      = "${module.subnet_rampup_5.aws_subnet_id}"
   aws_instance_name           = "${var.instance_rampup_kube_name}"
   aws_instance_key_name       = "${module.key_pair_rampup.aws_key_pair_name}"
-  aws_instance_security_group = ["${module.security_group_kubernetes.aws_security_group_id}"]
+  aws_instance_security_group = ["${module.security_group_cluster.aws_security_group_id}"]
   aws_instance_kubespray_role = "kube-master"
   aws_instance_public_ip      = "true"
 }

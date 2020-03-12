@@ -12,3 +12,17 @@ module "autoscaling_group_rampup" {
   
 }
 
+variable "security_group_rules_bastion_type_5000" {
+  type = string
+  default = "ingress"
+}
+
+variable "security_group_bastion_from_port_5000" {
+  type = string
+  default = "5000"
+}
+
+variable "security_group_bastion_to_port_5000" {
+  type = string
+  default = "5000"
+}

@@ -86,7 +86,7 @@ variable "instance_rampup_ami_nat" {
 
 variable "instance_rampup_type" {
   type = string
-  default = "t2.micro"
+  default = "t2.small"
 }
 
 variable "instance_rampup_name_nat" {
@@ -712,7 +712,25 @@ variable "security_group_rules_kube_inbound_udp_protocol" {
   default = "udp"
 }
 
+variable "target_group_port" {
+  type = string
+  default = "3030"
+}
 
+variable "target_group_protocol" {
+  type = string
+  default = "HTTP"
+}
+
+variable "target_group_name" {
+  type = string
+  default = "arey-target_group_front_3030"
+}
+
+variable "target_group_attachment_target_port" {
+  type = string
+  default = "3030"
+}
 
 
 
