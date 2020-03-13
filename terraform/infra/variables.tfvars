@@ -1,2 +1,2 @@
-aws_db_instance_username="User_db_instance"
-aws_db_instance_password="User_db_pass_123"
+aws_db_instance_username="root"
+aws_db_instance_password="123456abcd"

@@ -714,7 +714,7 @@ variable "security_group_rules_kube_inbound_udp_protocol" {
 
 variable "target_group_port" {
   type = string
-  default = "3030"
+  default = "30100"
 }
 
 variable "target_group_protocol" {
