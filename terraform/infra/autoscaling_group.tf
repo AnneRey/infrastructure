@@ -9,7 +9,7 @@ module "autoscaling_group_rampup" {
   aws_launch_configuration_instance_type    = "${var.autoscaling_group_rampup_type}"
   aws_launch_configuration_security_group   = ["${module.security_group_cluster.aws_security_group_id}"]
   aws_launch_configuration_key_name         = "${module.key_pair_rampup.aws_key_pair_name}"
-  aws_autoscaling_group_target_group_arn    = ["${module.target_group_rampup.alb_target_group_arn}"]
+  #aws_autoscaling_group_target_group_arn    = ["${module.target_group_rampup.alb_target_group_arn}"]
   
 }
 

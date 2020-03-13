@@ -141,7 +141,7 @@ variable "security_group_alb_from_port" {
 
 variable "security_group_alb_to_port" {
   type = string
-  default = "80"
+  default = ""
 }
 
 variable "security_group_alb_protocol" {
@@ -242,6 +242,16 @@ variable "security_group_rules_bastion_type" {
 variable "subnet_rampup_az_3" {
   type = string
   default = "us-west-2c"
+}
+
+variable "subnet_rampup_cidr_block_alb" {
+  type = string
+  default = "10.0.6.0/24"
+}
+
+variable "subnet_rampup_subnet_name_alb" {
+  type = string
+  default = "arey-subnetalb-Ana Rey-13/02/2020-AWS SETUP RAMPUP2-stop"
 }
 
 variable "subnet_rampup_cidr_block_5" {
