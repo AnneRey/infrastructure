@@ -39,6 +39,9 @@ variable "aws_instance_dest_check" {
   default = "true"
 }
 
+variable "aws_autoscaling_group_target_group_arn" {
+  type = string
+}
 
 
 

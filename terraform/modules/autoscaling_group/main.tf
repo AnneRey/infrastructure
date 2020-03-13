@@ -4,7 +4,7 @@ resource "aws_autoscaling_group" "aws_autoscaling_group" {
   min_size             = "${var.aws_autoscaling_group_min_size}"
   launch_configuration = "${aws_launch_configuration.aws_launch_configuration.name}"
   vpc_zone_identifier  = "${var.aws_autoscaling_group_vpc_zone_identifier}"
-
+  target_group_arn     = ["${var.aws_autoscaling_group_target_group_arn}"]
   
   tags = [
   {
